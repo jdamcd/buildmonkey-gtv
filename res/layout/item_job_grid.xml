@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Fill"
+  android:padding="@dimen/grid_padding">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/grid_item_height"
+    android:background="@color/grid_item_bg"
+    android:paddingTop="@dimen/status_padding"
+    android:paddingBottom="@dimen/status_padding">
+
+    <View
+      android:id="@+id/build_status"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/status_height"
+      android:layout_alignParentBottom="true"
+      android:layout_marginRight="@dimen/status_padding"
+      android:layout_marginLeft="@dimen/status_padding" />
+
+    <com.jdamcd.buildmonkey.view.FancyTextView
+      android:id="@+id/project_title"
+      style="@style/Wrap"
+      android:layout_centerInParent="true"
+      android:textSize="@dimen/grid_text" />
+  </RelativeLayout>
+
+</RelativeLayout>
