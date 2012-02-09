@@ -1,0 +1,1 @@
+This is a simple Google TV application to display the status of all projects on a Jenkins CI server.
