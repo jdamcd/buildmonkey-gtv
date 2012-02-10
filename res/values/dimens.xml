@@ -2,10 +2,11 @@
 
 <resources>
 
-  <dimen name="border_padding">20dp</dimen>
+  <dimen name="border_padding">10dp</dimen>
   <dimen name="grid_padding">5dp</dimen>
   <dimen name="grid_text">28sp</dimen>
-  <dimen name="grid_item_height">85dp</dimen>
+  <dimen name="grid_item_height">88dp</dimen>
+  <dimen name="grid_text_padding">10dp</dimen>
   <dimen name="status_height">5dp</dimen>
   <dimen name="status_padding">4dp</dimen>
 

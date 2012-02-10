@@ -24,7 +24,10 @@
       android:id="@+id/project_title"
       style="@style/Wrap"
       android:layout_centerInParent="true"
-      android:textSize="@dimen/grid_text" />
+      android:textSize="@dimen/grid_text"
+      android:singleLine="true"
+      android:ellipsize="end"
+      android:padding="@dimen/grid_text_padding" />
   </RelativeLayout>
 
 </RelativeLayout>
