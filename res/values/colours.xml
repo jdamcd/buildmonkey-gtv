@@ -2,10 +2,7 @@
 
 <resources>
 
-  <color name="black">#000000</color>
-  <color name="grey">#bbbbbb</color>
-  <color name="white">#ffffff</color>
-  <color name="transparent">#00000000</color>
+  <color name="tv_white">#f1f1f1</color>
 
   <color name="status_green">#007700</color>
   <color name="status_yellow">#777700</color>

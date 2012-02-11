@@ -27,7 +27,8 @@
       android:textSize="@dimen/grid_text"
       android:singleLine="true"
       android:ellipsize="end"
-      android:padding="@dimen/grid_text_padding" />
+      android:padding="@dimen/grid_text_padding"
+      android:textColor="@color/tv_white" />
   </RelativeLayout>
 
 </RelativeLayout>
