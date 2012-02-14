@@ -29,17 +29,19 @@ public class BuildMonkey extends Activity implements OnItemClickListener {
 
     private static String SERVER_URL = "your Jenkins server URL goes here";
     private static String ENDPOINT = "/api/json?tree=jobs[name,color,url]";
-    private static final int UPDATE_INTERVAL = 60 * 1000;
+    private static final int UPDATE_INTERVAL =  90 * 1000;
 
     private GridView builds;
     private ArrayList<Job> jobs;
-    
-    final Handler handler = new Handler();
-    final Runnable updater = new Runnable() {
+
+    private Handler handler;
+    private final Runnable updater = new Runnable() {
         @Override
         public void run() {
             new FetchStatusTask(BuildMonkey.this).execute();
-            handler.postDelayed(updater, UPDATE_INTERVAL);
+            if (handler != null) {
+                handler.postDelayed(updater, UPDATE_INTERVAL);
+            }
         }
     };
 
@@ -48,9 +50,21 @@ public class BuildMonkey extends Activity implements OnItemClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         builds = (GridView) findViewById(R.id.list_projects);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler = null;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handler = new Handler();
         handler.post(updater);
     }
-    
+
     private class FetchStatusTask extends IgnitedAsyncTask<BuildMonkey, Void, Void, Void> {
 
         private Jobs projects;
@@ -108,7 +122,7 @@ public class BuildMonkey extends Activity implements OnItemClickListener {
     public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
         startActivity(urlIntent(jobs.get(position).getUrl()));
     }
-    
+
     public static Intent urlIntent(String url) {
         return new Intent(Intent.ACTION_VIEW, Uri.parse(url));
     }

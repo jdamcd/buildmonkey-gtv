@@ -13,8 +13,9 @@
     android:gravity="center"
     android:numColumns="3"
     android:stretchMode="columnWidth"
-    android:layout_margin="@dimen/border_padding"
+    android:padding="@dimen/border_padding"
     android:listSelector="@color/grid_selector"
-    android:overScrollMode="never" />
+    android:overScrollMode="never"
+    android:scrollbarStyle="outsideOverlay" />
   
 </LinearLayout>
